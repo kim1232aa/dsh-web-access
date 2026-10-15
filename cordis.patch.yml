@@ -1,0 +1,11 @@
+# dsh-web-access bundle patch.
+# dsh-base's built-in `tool-web` row also registers `web_search`; turn that one
+# off (its `web_fetch` stays) so ours can take the name. To keep the built-in
+# instead, re-enable it in your profile patch and set
+# dsh-web-access.config.toolNames.webSearch to another name.
+- id: tool-web
+  config:
+    search: false
+- insert:
+    - id: dsh-web-access
+      name: dsh-web-access
