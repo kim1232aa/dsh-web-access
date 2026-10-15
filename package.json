@@ -1,0 +1,29 @@
+{
+  "name": "dsh-web-access",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness plugin: web_search, fetch_content, get_search_content, source_check (port of pi-web-access).",
+  "type": "module",
+  "main": "index.js",
+  "exports": { ".": "./index.js", "./package.json": "./package.json" },
+  "files": ["index.js", "lib", "cordis.patch.yml", "README.md", "README.zh-CN.md", "LICENSE", "FEATURE_MAP.md"],
+  "scripts": { "test": "node --test test/*.test.js" },
+  "keywords": ["deepseek-harness", "dsh", "dsh-plugin", "cordis", "web-search", "fetch"],
+  "license": "MIT",
+  "engines": { "node": ">=20.0.0" },
+  "dsh": {
+    "engines": { "dsh": ">=0.2.0-rc.1" },
+    "bundle": { "patch": "./cordis.patch.yml" }
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "linkedom": "^0.16.0",
+    "turndown": "^7.2.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.2",
+    "@deepseek-ai/schemastery": "^3.18.0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/schemastery": "^3.18.4"
+  }
+}
